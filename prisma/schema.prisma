@@ -24,7 +24,8 @@ model User {
   id        String   @id @default(cuid())
   email     String   @unique
   name      String?
-  passwordHash  String
+  passwordHash  String?
+  passwordChangeAt DateTime?
   expenses     Expense[]
   subscription  Subscription   @default(FREE)
   createdAt DateTime @default(now())
